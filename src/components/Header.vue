@@ -1,0 +1,1 @@
+<template><h2>Administrador de Gastos</h2></template>
