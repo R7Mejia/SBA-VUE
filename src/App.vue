@@ -24,7 +24,7 @@ import { useToast } from 'vue-toastification';
 
 const toast = useToast();
 
-const transactions = ref([]);
+const transactions = ref([]); //here is where the array with the objects (whatever transaction is typed) is generated
 
 onMounted(() => {
   const savedTransactions = JSON.parse(localStorage.getItem('transactions'));
@@ -67,7 +67,7 @@ const handleTransactionSubmitted = (transactionData) => {
 
   saveTransactionsToLocalStorage();
 
-  toast.success('Transaction added.');
+  toast.success('Transacción añadida.');
 };
 
 // Generate unique ID
@@ -76,18 +76,17 @@ const generateUniqueId = () => {
 };
 
 // Delete transaction
-// const handleTransactionDeleted = (id) => {
-//   transactions.value = transactions.value.filter(
-//     (transaction) => transaction.id !== id
-//   );
+const handleTransactionDeleted = (id) => {
+  transactions.value = transactions.value.filter(
+    (transaction) => transaction.id !== id);
 
-//   saveTransactionsToLocalStorage();
+  saveTransactionsToLocalStorage();
 
-//   toast.success('Transaction deleted.');
-// };
+  toast.success('Transacción eliminada.');
+ };
 
 // // Save transactions to local storage
-// const saveTransactionsToLocalStorage = () => {
-//   localStorage.setItem('transactions', JSON.stringify(transactions.value));
-// };
+ const saveTransactionsToLocalStorage = () => {
+   localStorage.setItem('transactions', JSON.stringify(transactions.value));
+ };
 </script>

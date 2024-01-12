@@ -1,1 +1,5 @@
-<template><h2>Administrador de Gastos</h2></template>
+<template>
+<div class="header">
+<h2 class="admin">Administrador de Gastos</h2>
+</div>
+</template>

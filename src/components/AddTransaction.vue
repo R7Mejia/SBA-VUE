@@ -23,35 +23,33 @@
 </template>
 
 <script setup>
+import { useToast } from 'vue-toastification';
 import { ref } from 'vue';
-import {useToast} from 'vue-toastification'
 
 const text = ref('');
 const amount = ref('');
 
-const emit = defineEmits(['transactionDeleted']);
-
-const deleteTransaction = (id) => {
-  emit('transactionDeleted', id);
-};
-
+// Get toast interface
 const toast = useToast();
 
+const emit = defineEmits(['transactionSubmitted']);
+
 const onSubmit = () => {
-    if (!text.value || !amount.value) {
-        toast.error('Es obligatorio llenar ambos campos *');
-        return;
-    }
-    const transactionData = {
-        text: text.value,
-        amount: parseFloat(amount.value)
-    }
+  if (!text.value || !amount.value) {
+    // Display a toast error message if either field is empty
+    toast.error('Es obligatorio llenar ambos *.');
+    return;
+  }
 
-emit('transactionSubmitted', transactionData)
+  const transactionData = {
+    text: text.value,
+    amount: parseFloat(amount.value),
+  };
 
-    text.value = '';
-    amount.value = '';
-}
+  emit('transactionSubmitted', transactionData);
+
+  // Clear form fields
+  text.value = '';
+  amount.value = '';
+};
 </script>
-
-

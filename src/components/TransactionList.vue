@@ -58,8 +58,8 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
 
+const emit = defineEmits(['transactionDeleted'])
 const props = defineProps({
   transactions: {
     type: Array,
@@ -67,5 +67,8 @@ const props = defineProps({
   },
 });
 
-
+//Create the delete function
+const deleteTransaction = (id) => {
+  emit('transactionDeleted', id)
+}
 </script>

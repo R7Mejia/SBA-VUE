@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 :root {
-  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(75, 69, 249, 0.24);
 }
 
 * {
   box-sizing: border-box;
+}
+
+div#app {
+  border: 27px solid rgb(23, 78, 69); /* Lighter yellow-ish color */
+  padding: 30px;
+  
 }
 
 body {
@@ -24,11 +30,22 @@ body {
   width: 400px;
 }
 
+.header{
+  text-align: center;
+  font-weight: bold;
+  font-size: larger;
+  font-family: sans-serif;
+  
+}
 h1 {
   letter-spacing: 1px;
   margin: 0;
 }
-
+h2.admin{
+ 
+  margin: 0;
+  padding: 0;
+}
 h3 {
   border-bottom: 1px solid #bbb;
   padding-bottom: 10px;
@@ -40,21 +57,21 @@ h4 {
   text-transform: uppercase;
 }
 
-.inc-exp-container {
-  background-color: #fff;
+.deposito {
+  background-color: #f6f4f4;
   box-shadow: var(--box-shadow);
-  padding: 20px;
+  padding: 8px;
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
 }
 
-.inc-exp-container > div {
+.deposito > div {
   flex: 1;
   text-align: center;
 }
 
-.inc-exp-container > div:first-of-type {
+.deposito > div:first-of-type {
   border-right: 1px solid #dedede;
 }
 
